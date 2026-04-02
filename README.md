@@ -1,43 +1,179 @@
-# rail_sec_sim
-Simulator of attacks and security in the train-control system
+# MITM Railway Attack Simulator
+
+An interactive cybersecurity simulation that demonstrates how **Man-in-the-Middle (MITM) attacks** can disrupt real-time railway control systems.
+
+---
+
+## Overview
+
+MITM Railway Attack Simulator is a Streamlit-based simulation of a railway communication system, where a train exchanges data with a control center.
+
+The project demonstrates how an attacker positioned between these components can intercept, manipulate, and replay messages — leading to unsafe system behavior.
+
+This simulation highlights the importance of **secure communication in critical infrastructure systems**.
+
+live demo: 
+
+---
+
+## System Architecture
+
+The system consists of three main components:
+
+- **Train System**  
+  Sends telemetry data (speed, status, signal)
+
+- **Control Center**  
+  Sends operational commands (STOP, GO, SLOW)
+
+- **Attacker (MITM)**  
+  Intercepts and manipulates communication between the two
+
+```mermaid
+flowchart LR
+
+    subgraph Railway System
+        T[Train]
+        C[Control Center]
+    end
+
+    A[MITM Attacker]
+
+    T -->|Telemetry| A
+    A -->|Tampered Data| C
+
+    C -->|Commands| A
+    A -->|Injected Commands| T
+```
+
+## MITM Attack Variants
+
+The simulator implements three types of Man-in-the-Middle attacks:
+
+### Data Manipulation
+- Alters telemetry data sent from the train  
+- Example: speed changes from 60 → 200  
+- Impact: control center makes incorrect decisions  
+
+<img width="1826" height="572" alt="image" src="https://github.com/user-attachments/assets/c7e1b276-e4ba-4771-8690-34f249a8f99e" />
 
 
-The system demonstrates how encrypted and signed messages can be sent from a train to a control center and how attacks such as message tampering or spoofing can be detected.
-It focuses on basic concepts: encryption, integrity checks, spoofing detection, and basic secure protocols.
+---
+
+### Command Injection
+- Modifies commands sent to the train  
+- Example: STOP → GO  
+- Impact: unsafe system behavior (unexpected acceleration)  
+
+
+<img width="1828" height="563" alt="image" src="https://github.com/user-attachments/assets/660a8931-792f-4f1d-b9a0-258abfa8346c" />
+
+
+---
+
+### Replay Attack
+- Reuses previously sent commands  
+- Example: repeats an old STOP command  
+- Impact: delayed or inconsistent system response  
+
+
+<img width="1831" height="548" alt="image" src="https://github.com/user-attachments/assets/c7ad999d-614b-416d-92e1-c9a640537b76" />
 
 
 
-Trains send signed and encrypted messages (ID, location, speed) via sockets.
+---
 
-![Form Screenshot](train.png)
-![Form Screenshot](train_1.png)
+## Security Mode
 
+The simulation includes a security layer that represents:
 
-The control center decrypts and verifies each message.
+- Data validation  
+- Integrity checks  
+- Secure communication mechanisms  
 
-![Form Screenshot](control_center_1.png)
-
-
-A simulated attacker sends tampered or spoofed messages.
-
-![Form Screenshot](attacker.png)
-![Form Screenshot](attacker1.png)
-
-
-The system detects and logs successful messages and cyber attacks.
-
-![Form Screenshot](control_center_1.png)
-![Form Screenshot](control_center_4.png)
+When enabled:
+- Manipulated data is detected  
+- Attacks are blocked  
+- System behavior stabilizes  
 
 
-Includes a Tkinter dashboard for real-time monitoring (status, counters, last train).
+<img width="1502" height="557" alt="image" src="https://github.com/user-attachments/assets/6130aaa4-91e8-44b9-94b0-a7dba569b6b9" />
 
-![Form Screenshot](secure_train_monitoring.png)
+<img width="416" height="604" alt="image" src="https://github.com/user-attachments/assets/ae7d7d13-6af6-49ee-88ef-52dfa7c49334" />
 
 
 
+---
 
+## Features
 
+- Real-time system simulation  
+- Interactive attack selection  
+- Original vs Tampered data comparison  
+- Dynamic risk level calculation  
+- System logs (SOC-style monitoring)  
+- Live charts (speed & risk over time)  
+- Critical condition detection (e.g. overspeed)  
 
+---
+
+## System Behavior
+
+The system reacts dynamically to commands and attacks:
+
+- Speed increases/decreases based on commands  
+- Overspeed (>180 km/h) triggers critical alerts  
+- Conflicting signals generate warnings  
+- Risk level increases with malicious activity  
+
+---
+
+## Visualization
+
+The dashboard provides:
+
+- Speed & risk charts over time  
+- Real-time risk level indicator  
+- Event logs showing system activity and attacks  
+
+---
+
+## Purpose
+
+This project is designed for:
+
+- Educational use (cybersecurity concepts)  
+- Demonstrating risks in cyber-physical systems  
+- Understanding MITM attack mechanisms  
+- Visualizing cause-and-effect in system security  
+
+---
+
+## How to Run
+
+1. Install dependencies:
+
+```bash
+pip install streamlit pandas
+```
+
+2. Run the application:
+
+```bash
+streamlit run app.py
+```
+---
+
+## Key Takeaways
+- MITM attacks can manipulate both data and control signals
+- Even simple attacks can lead to critical system failures
+- Security mechanisms are essential in real-time systems
+- Cybersecurity is crucial for critical infrastructure like railways
+
+---
+
+## Future Improvements
+- AI-based anomaly detection
+- Advanced attack scenarios
 
 
