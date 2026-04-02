@@ -154,7 +154,7 @@ This project is designed for:
 1. Install dependencies:
 
 ```bash
-pip install streamlit pandas
+pip install -r requirements.txt
 ```
 
 2. Run the application:
