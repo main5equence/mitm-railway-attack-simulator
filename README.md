@@ -8,7 +8,7 @@ An interactive cybersecurity simulation that demonstrates how **Man-in-the-Middl
 
 MITM Railway Attack Simulator is a Streamlit-based simulation of a railway communication system, where a train exchanges data with a control center.
 
-The project demonstrates how an attacker positioned between these components can intercept, manipulate, and replay messages — leading to unsafe system behavior.
+The project demonstrates how an attacker positioned between these components can intercept, manipulate, and replay messages - leading to unsafe system behavior.
 
 This simulation highlights the importance of **secure communication in critical infrastructure systems**.
 
