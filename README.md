@@ -113,12 +113,6 @@ When enabled:
 - System behavior stabilizes  
 
 
-<img width="1502" height="557" alt="image" src="https://github.com/user-attachments/assets/6130aaa4-91e8-44b9-94b0-a7dba569b6b9" />
-
-<img width="416" height="604" alt="image" src="https://github.com/user-attachments/assets/ae7d7d13-6af6-49ee-88ef-52dfa7c49334" />
-
-
-
 ---
 
 ## Features
@@ -140,7 +134,7 @@ The system reacts dynamically to commands and attacks:
 - Speed increases/decreases based on commands  
 - Overspeed (>180 km/h) triggers critical alerts  
 - Conflicting signals generate warnings  
-- Risk level increases with malicious activity  
+- Risk level increases with malicious activity
 
 ---
 
@@ -151,6 +145,10 @@ The dashboard provides:
 - Speed & risk charts over time  
 - Real-time risk level indicator  
 - Event logs showing system activity and attacks  
+
+<img width="1502" height="557" alt="image" src="https://github.com/user-attachments/assets/6130aaa4-91e8-44b9-94b0-a7dba569b6b9" />
+
+<img width="416" height="604" alt="image" src="https://github.com/user-attachments/assets/ae7d7d13-6af6-49ee-88ef-52dfa7c49334" />
 
 ---
 
