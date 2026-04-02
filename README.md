@@ -6,13 +6,29 @@ An interactive cybersecurity simulation that demonstrates how **Man-in-the-Middl
 
 ## Overview
 
-MITM Railway Attack Simulator is a Streamlit-based simulation of a railway communication system, where a train exchanges data with a control center.
+MITM Railway Attack Simulator is a Streamlit-based simulation of a railway communication system, where a train exchanges data with a control center. The project demonstrates how an attacker positioned between these components can intercept, manipulate, and replay messages - leading to unsafe system behavior. This simulation highlights the importance of **secure communication in critical infrastructure systems**.
 
-The project demonstrates how an attacker positioned between these components can intercept, manipulate, and replay messages - leading to unsafe system behavior.
+---
 
-This simulation highlights the importance of **secure communication in critical infrastructure systems**.
+Live Demo: 
+https://mitm-railway-attack-simulator.streamlit.app/ 
 
-live demo: https://mitm-railway-attack-simulator.streamlit.app/ 
+---
+## Project Structure
+
+```
+mitm-railway-attack-simulator/
+│
+├── .github/
+│   └── workflows/
+│       └── codeql.yml
+├── app.py
+├── requirements.txt
+├── README.md
+├── SECURITY.md
+├── LICENSE
+├── .gitignore
+```
 
 ---
 
@@ -176,4 +192,8 @@ streamlit run app.py
 - AI-based anomaly detection
 - Advanced attack scenarios
 
+---
 
+## License
+
+This project is licensed under the MIT License.
