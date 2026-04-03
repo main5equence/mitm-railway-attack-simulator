@@ -36,6 +36,9 @@ if "risk" not in st.session_state:
 if "last_command" not in st.session_state:
     st.session_state.last_command = "MAINTAIN"
 
+if "command_history" not in st.session_state:
+    st.session_state.command_history = []
+
 # --- LOG FUNCTION ---
 def add_log(message, level="INFO"):
     st.session_state.log.insert(0, f"[{level}] {message}")
