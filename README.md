@@ -2,6 +2,11 @@
 
 An interactive cybersecurity simulation that demonstrates how **Man-in-the-Middle (MITM) attacks** can disrupt real-time railway control systems.
 
+![Cybersecurity](https://img.shields.io/badge/domain-cybersecurity-blue)
+![MITM Simulation](https://img.shields.io/badge/type-MITM%20simulation-red)
+![AI / Simulation](https://img.shields.io/badge/focus-attack%20simulation-orange)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 ---
 
 ## Overview
