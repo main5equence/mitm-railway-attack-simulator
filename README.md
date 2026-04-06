@@ -5,6 +5,10 @@ An interactive cybersecurity simulation that demonstrates how **Man-in-the-Middl
 ![Cybersecurity](https://img.shields.io/badge/domain-cybersecurity-blue)
 ![MITM Simulation](https://img.shields.io/badge/type-MITM%20simulation-red)
 ![AI / Simulation](https://img.shields.io/badge/focus-attack%20simulation-orange)
+![Python](https://img.shields.io/badge/python-3.10+-blue)
+![Streamlit](https://img.shields.io/badge/streamlit-app-red)
+![Security](https://img.shields.io/badge/security-policy-blue)
+![Dependabot](https://img.shields.io/badge/dependabot-enabled-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
