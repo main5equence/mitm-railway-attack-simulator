@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import pandas as pd
 
-st.set_page_config(page_title="RailGuard X", layout="wide")
+st.set_page_config(page_title="MITM Railway Attacks Simulator", layout="wide")
 
 # --- HEADER ---
 st.title("MITM Railway Attacks Simulator")
