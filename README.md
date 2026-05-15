@@ -36,7 +36,7 @@ mitm-railway-attack-simulator/
 ├── README.md
 ├── SECURITY.md
 ├── LICENSE
-├── .gitignore
+└── .gitignore
 ```
 
 ---
