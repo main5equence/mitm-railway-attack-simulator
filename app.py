@@ -18,9 +18,18 @@ attack_type = st.sidebar.selectbox(
     ["None", "Data Manipulation", "Command Injection", "Replay Attack"]
 )
 
-security_enabled = st.sidebar.toggle("Enable Security (Encryption & Validation)", False)
+security_enabled = st.sidebar.toggle(
+    "Enable Security (Integrity Validation)",
+    False
+)
 
 # --- STATE INIT ---
+if "execute_command" not in st.session_state:
+    st.session_state.execute_command = False
+
+if "command" not in st.session_state:
+    st.session_state.command = "MAINTAIN"
+
 if "speed" not in st.session_state:
     st.session_state.speed = 100
 
@@ -67,7 +76,7 @@ def apply_attack(data, command):
 
     if attack_type == "Data Manipulation" and data:
         original_speed = data["speed"]
-        data["speed"] = original_speed + random.randint(80, 150)
+        data["speed"] = min(380, original_speed + random.randint(80, 150))
         data["status"] = "CORRUPTED"
         attack_desc = f"Speed changed {original_speed} → {data['speed']}"
         st.session_state.risk += 3
@@ -158,10 +167,11 @@ with col3:
 
         st.session_state.command = attacked_cmd
         st.session_state.last_command = attacked_cmd
-
         st.session_state.original_cmd = original_cmd
 
-        st.session_state.command_history.append(attacked_cmd)
+        st.session_state.command_history.append(original_cmd)
+
+        st.session_state.execute_command = True
 
         if blocked:
             add_log("Command blocked by security", "SUCCESS")
@@ -180,28 +190,39 @@ with col3:
             st.write(st.session_state.command)
 
 # --- SYSTEM ---
+
 st.markdown("---")
 st.header("System Behavior")
 
-if "command" in st.session_state:
+if st.session_state.execute_command:
     cmd = st.session_state.command
 
     if cmd == "STOP":
-        st.session_state.speed = max(0, st.session_state.speed - 50)
+        st.session_state.speed = max(
+            0,
+            st.session_state.speed - 50
+        )
         add_log("Train slowing down", "INFO")
 
     elif cmd == "GO":
-        st.session_state.speed += 40
+        st.session_state.speed = min(
+            380,
+            st.session_state.speed + 40
+        )
         add_log("Train accelerating", "INFO")
 
     elif cmd == "SLOW":
-        st.session_state.speed -= 20
+        st.session_state.speed = max(
+            0,
+            st.session_state.speed - 20
+        )
         add_log("Train slowing", "INFO")
 
+    st.session_state.execute_command = False
+    
 # --- CRITICAL CONDITIONS ---
 if st.session_state.speed > 180:
     st.error("CRITICAL: Overspeed! Risk of derailment!")
-    st.session_state.risk += 5
 
 if st.session_state.speed == 0 and st.session_state.command == "GO":
     st.warning("Conflicting signals detected!")
