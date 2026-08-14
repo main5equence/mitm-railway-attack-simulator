@@ -80,7 +80,7 @@ The simulator implements three types of Man-in-the-Middle attacks:
 - Example: speed changes from 60 → 200  
 - Impact: control center makes incorrect decisions  
 
-<img width="1826" height="572" alt="image" src="https://github.com/user-attachments/assets/c7e1b276-e4ba-4771-8690-34f249a8f99e" />
+<img width="1392" height="592" alt="Zrzut ekranu 2026-08-14 o 20 26 57" src="https://github.com/user-attachments/assets/06786649-c8bb-4aff-87e9-58d449af1c89" />
 
 
 ---
@@ -90,8 +90,8 @@ The simulator implements three types of Man-in-the-Middle attacks:
 - Example: STOP → GO  
 - Impact: unsafe system behavior (unexpected acceleration)  
 
+<img width="1383" height="561" alt="Zrzut ekranu 2026-08-14 o 20 27 52" src="https://github.com/user-attachments/assets/23d3dbc2-0abf-4142-bd7b-3d2340e9ce7d" />
 
-<img width="1828" height="563" alt="image" src="https://github.com/user-attachments/assets/660a8931-792f-4f1d-b9a0-258abfa8346c" />
 
 
 ---
@@ -101,8 +101,7 @@ The simulator implements three types of Man-in-the-Middle attacks:
 - Example: repeats an old STOP command  
 - Impact: delayed or inconsistent system response  
 
-
-<img width="1831" height="548" alt="image" src="https://github.com/user-attachments/assets/c7ad999d-614b-416d-92e1-c9a640537b76" />
+<img width="1374" height="557" alt="Zrzut ekranu 2026-08-14 o 20 28 25" src="https://github.com/user-attachments/assets/010dc55f-9a79-444e-9f7c-db278e8a7ecc" />
 
 
 
@@ -114,12 +113,16 @@ The simulation includes a security layer that represents:
 
 - Data validation  
 - Integrity checks  
-- Secure communication mechanisms  
+- Secure communication mechanisms
+
+<img width="1350" height="594" alt="Zrzut ekranu 2026-08-14 o 20 29 22" src="https://github.com/user-attachments/assets/c41459c9-5f66-4aec-9417-2b8921dc078b" />
 
 When enabled:
 - Manipulated data is detected  
 - Attacks are blocked  
 - System behavior stabilizes  
+
+<img width="1356" height="582" alt="Zrzut ekranu 2026-08-14 o 20 30 08" src="https://github.com/user-attachments/assets/72926e62-9106-4a62-8fdb-cf9a40ff3826" />
 
 
 ---
