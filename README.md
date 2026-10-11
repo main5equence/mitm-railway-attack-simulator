@@ -53,22 +53,26 @@ The system consists of three main components:
 
 - **Attacker (MITM)**  
   Intercepts and manipulates communication between the two
-
+  
 ```mermaid
-flowchart LR
-
-    subgraph Railway System
-        T[Train]
-        C[Control Center]
+flowchart TB
+    subgraph TEL["Telemetry: Train → Control Center"]
+        direction LR
+        T1["Train"] -->|"Telemetry"| A1["MITM attacker"]
+        A1 -->|"Tampered telemetry"| C1["Control Center"]
     end
 
-    A[MITM Attacker]
+    subgraph CMD["Commands: Control Center → Train"]
+        direction LR
+        C2["Control Center"] -->|"Commands"| A2["MITM attacker"]
+        A2 -->|"Modified / injected commands"| T2["Train"]
+    end
 
-    T -->|Telemetry| A
-    A -->|Tampered Data| C
+    classDef endpoint fill:#eef2f6,stroke:#526175,color:#17212b
+    classDef attacker fill:#fff0f0,stroke:#b64040,color:#7a2020
 
-    C -->|Commands| A
-    A -->|Injected Commands| T
+    class T1,T2,C1,C2 endpoint
+    class A1,A2 attacker
 ```
 
 ## MITM Attack Variants
